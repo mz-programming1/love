@@ -1,0 +1,83 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url("images/1.avif");
+    color: #160d10;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    backdrop-filter: blur(2px);
+
+}
+h1 {
+    font-family: 'Pacifico', cursive;
+    margin-top: 50px;
+}
+.container {
+    
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+.card {
+    width: 150px;
+    height: 200px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+.card-content {
+    width: 100%;
+    height: 100%;
+    background-color: #ee9797;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+.card:hover .card-content {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.card.flipped .card-content {
+    transform: rotateY(180deg);
+}
+.card-content h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    font-size: 18px;
+}
+.message {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    font-size: 16px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #ffe6ec;
+}
+#heart {
+    color: #d23669;
+    font-size: 60px;
+    animation: pulse 1s infinite;
+}
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
